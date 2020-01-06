@@ -29,6 +29,11 @@ kumuluzee:
                         </Root>
                       </Loggers>
                     </Configuration>'
+  grpc:
+    server:
+      http:
+        port: 8182
+
 configuration-properties:
   db-url: jdbc:mysql://34.68.211.18:3306/comments
   db-user: root
