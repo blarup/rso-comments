@@ -1,5 +1,5 @@
 kumuluzee:
-  name: comments-service
+  name: comments
   env:
     name: dev
   version: 1.0.0
@@ -12,7 +12,7 @@ kumuluzee:
       hosts: http://etcd:2379
   logs:
     config-file: '<?xml version="1.0" encoding="UTF-8"?>
-                    <Configuration name="comments-service">
+                    <Configuration name="comments">
                       <Appenders>
                         <Console name="console" target="SYSTEM_OUT">
                           <PatternLayout pattern="%d %p %marker %m %X %ex %n"/>
