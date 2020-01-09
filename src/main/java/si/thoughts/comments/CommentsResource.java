@@ -39,6 +39,14 @@ public class CommentsResource {
     }
 
     @GET
+    @Path("info")
+    public Response getInfo(){
+        String result = "Database url: " + cfg.getDbUrl() + " | "
+                + "User: " + cfg.getDbUser() + " | " + "Password: " +cfg.getDbPassword();
+        return Response.ok(result).build();
+    }
+
+    @GET
     public Response getComments(){
         List<Comment> comments = new LinkedList<Comment>();
 
