@@ -10,6 +10,10 @@ kumuluzee:
   config:
     etcd:
       hosts: http://etcd:2379
+  metrics:
+    web-instrumentation:
+      - name: comments-endpoint
+        url-pattern: /v1/comments/*
   logs:
     config-file: '<?xml version="1.0" encoding="UTF-8"?>
                     <Configuration name="comments">

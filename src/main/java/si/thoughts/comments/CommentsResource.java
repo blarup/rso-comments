@@ -1,6 +1,8 @@
 package si.thoughts.comments;
 
 import com.kumuluz.ee.logs.cdi.Log;
+import org.eclipse.microprofile.metrics.annotation.Counted;
+
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -47,6 +49,7 @@ public class CommentsResource {
     }
 
     @GET
+    @Counted
     public Response getComments(){
         List<Comment> comments = new LinkedList<Comment>();
 
