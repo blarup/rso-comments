@@ -40,6 +40,21 @@ public class CommentsResource {
         return Response.ok().build();
     }
 
+    @DELETE
+    public Response deleteComment(@QueryParam("commentId") int commentId){
+        try(
+                Connection con = DriverManager.getConnection(cfg.getDbUrl(),cfg.getDbUser(),cfg.getDbPassword());
+                Statement stmt = con.createStatement();
+        ){
+            stmt.executeUpdate("DELETE FROM comments WHERE id = " + commentId);
+        }catch (SQLException e){
+            System.err.println(e);
+            return Response.status(Response.Status.FORBIDDEN).build();
+        }
+
+        return Response.ok().build();
+    }
+
     @GET
     @Path("info")
     public Response getInfo(){
